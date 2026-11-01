@@ -6,7 +6,9 @@ Management account (`277576839910`). Control Tower home region and everything he
 | File | Manages |
 |---|---|
 | `identity-readonly.tf` | `my-533d-readonly` user, `ReadOnlyInvestigators` group and `ReadOnlyInvestigation` permission set, assigned to every active account |
-| `identity-admin.tf` | `my-533d-admin` user, member of Control Tower's `AWSControlTowerAdmins` group (`AWSAdministratorAccess` on the management, Audit and Log Archive accounts) |
+
+Administration is done with the `MY-533d-Admin` IAM user in the management account
+(console sign-in or `aws login`); there is no Identity Center admin user.
 
 State: `s3://my-org-governance-tfstate-277576839910/my-org-governance/terraform.tfstate`
 (bucket in `ap-southeast-5`, created by `bootstrap/create-state-bucket.sh`).
