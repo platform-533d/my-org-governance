@@ -14,16 +14,13 @@ State: `s3://my-org-governance-tfstate-277576839910/my-org-governance/terraform.
 ## Usage
 
 ```bash
-aws login --profile my-admin --region ap-southeast-5     # sign in as the MY-533d-Admin IAM user
-AWS_PROFILE=my-admin ./bootstrap/create-state-bucket.sh  # first time only
-
-# Terraform cannot read `aws login` sessions directly; export the short-lived
-# session credentials into this shell only (nothing is written to disk).
-eval "$(aws configure export-credentials --profile my-admin --format env)"
-export AWS_REGION=ap-southeast-5
-terraform init
-terraform plan
+aws sso login --sso-session my-533d-admin                     # Identity Center user MY-533d-Admin
+AWS_PROFILE=my-adm-mgmt ./bootstrap/create-state-bucket.sh  # first time only
+AWS_PROFILE=my-adm-mgmt terraform init
+AWS_PROFILE=my-adm-mgmt terraform plan
 ```
+
+Portal: `https://d-88672852fa.awsapps.com/start`
 
 ## Read-only user first login
 
