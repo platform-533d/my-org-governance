@@ -7,6 +7,7 @@ Management account (`277576839910`). Control Tower home region and everything he
 |---|---|
 | `identity-readonly.tf` | `my-533d-readonly` user, `ReadOnlyInvestigators` group and `ReadOnlyInvestigation` permission set, assigned to every active account |
 | `identity-admin.tf` | `MY-533d-Admin` Identity Center user, the single named admin, in Control Tower's `AWSControlTowerAdmins` group (`AWSAdministratorAccess` on the management, Audit and Log Archive accounts) |
+| `control-tower-ous.tf` | Registers OUs with Control Tower (`AWSControlTowerBaseline` 5.0): mandatory controls including region deny, auto-enrolment of accounts moved in. Currently: Sandbox |
 
 State: `s3://my-org-governance-tfstate-277576839910/my-org-governance/terraform.tfstate`
 (bucket in `ap-southeast-5`, created by `bootstrap/create-state-bucket.sh`).
