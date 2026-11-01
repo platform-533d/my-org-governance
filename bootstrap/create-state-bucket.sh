@@ -2,7 +2,7 @@
 # One-off creation of the Terraform state bucket for my-org-governance.
 # Safe to re-run: every step is idempotent.
 #
-# Usage: AWS_PROFILE=my-admin ./bootstrap/create-state-bucket.sh
+# Usage: AWS_PROFILE=my-adm-mgmt ./bootstrap/create-state-bucket.sh
 set -euo pipefail
 
 EXPECTED_ACCOUNT="277576839910"
